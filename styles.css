@@ -20,22 +20,30 @@ colors{
     color: hsl(0, 0%, 59%);
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
 
 .page-container{
     width: 100%;
     min-height: 100vh;
+    /* overflow: hidden; */
     display: grid;
     place-items: center;
-    background-image: url("./images/bg-pattern-top.svg");
+    background-image: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 350px, 350px;
+    background-position: left top -200px, right bottom -50px;
     background-color: hsl(185, 75%, 39%);
 }
 
 .card{
-    width: 30%;
+    width: 80%;
     /* height: 300px; */
     border-radius: 1.5rem;
     background-color: hsl(0, 0%, 100%);
@@ -110,5 +118,25 @@ colors{
 .activity-name{
     color: hsl(227, 10%, 46%);
     font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px){
+    .page-container{
+        background-size: 550px, 500px;
+        background-position: left top -300px, right bottom -50px;
+    }
+}
+
+@media screen and (min-width: 992px){
+
+    .page-container{
+        background-size: 650px, 700px;
+        background-position: left top -300px, right bottom -300px;
+    }
+
+    .card{
+        width: 30%;
+    }
+
 }
 
